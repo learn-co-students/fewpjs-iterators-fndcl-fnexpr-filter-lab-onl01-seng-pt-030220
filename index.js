@@ -1,25 +1,33 @@
+//const { arrayContaining } = require("expect");
 
-function findMatching(drivers, name) {
-// let array = []
-  return drivers.filter(driver => {
-    return driver.toLowerCase() === name.toLowerCase()
+
+
+function findMatching(drivers, string) {
+  
+ let answer = drivers.filter(driver => { 
+  return driver.toLowerCase() === string.toLowerCase();
+ })
+
+  return answer
+}
+
+function fuzzyMatch(drivers, letters) {
+  let answer = drivers.filter(driver => {
+    return driver.charAt(0) === letters.charAt(0)
   })
+  return answer
 }
 
-function fuzzyMatch(drivers, name) {
-
-  return drivers.filter(driver => {
-
-    return driver.charAt(0) === name.charAt(0)
-})
-}
-
-function matchName(drivers, name) {
-
-  return drivers.filter(driver => {
-     if (driver.name === name) {
-       return driver
-     }
+function matchName(drivers, string) {
+  let answer = drivers.filter(driver => {
+      return driver.name === string;
   })
-
+  return answer
 }
+
+
+
+
+
+
+
